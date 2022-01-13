@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.brown, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -65,7 +66,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -78,7 +79,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -91,7 +92,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -121,7 +122,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -135,7 +136,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -148,7 +149,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -161,7 +162,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -191,7 +192,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -204,7 +205,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -217,7 +218,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -230,7 +231,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -260,7 +261,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -273,7 +274,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -286,7 +287,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -299,7 +300,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -329,7 +330,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -342,7 +343,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -355,7 +356,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -368,7 +369,7 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: Colors.black12, // <-- Button color
+                              primary: HexColor("#333333"), // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
