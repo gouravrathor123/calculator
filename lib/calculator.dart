@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);
@@ -9,11 +8,15 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  String ans = '123';
+  String operations = '12+4';
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQueryData = MediaQuery.of(context);
     double height = mediaQueryData.size.height;
     double width = mediaQueryData.size.width;
+
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -23,12 +26,25 @@ class _CalculatorState extends State<Calculator> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                height: (height / 3) - 25,
-                width: width,
-                child: Container(
-                    // color: Colors.black,
-                    ),
-              ),
+                  height: (height / 3) - 25,
+                  width: width,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        operations,
+                        style: (const TextStyle(
+                            color: Colors.white, fontSize: 32)),
+                      ),
+                      const SizedBox(height: 30,),
+                      Text(
+                        ans,
+                        style: (const TextStyle(
+                            color: Colors.white, fontSize: 32)),
+                      ),
+                    ],
+                  )),
               const Divider(
                 height: 1,
                 thickness: 1,
@@ -46,7 +62,12 @@ class _CalculatorState extends State<Calculator> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations="";
+                                ans="";
+                              });
+                            },
                             child: const Text(
                               "C",
                               style:
@@ -55,18 +76,23 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              operations="";
+                              ans="";
+                            },
                             child: const Icon(Icons.backspace_outlined,
                                 color: Colors.white),
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -79,12 +105,19 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='/';
+                                dotheclaulation('/');
+                              });
+
+                            },
                             child: const Text(
                               "/",
                               style: TextStyle(fontSize: 30),
@@ -92,7 +125,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -114,7 +148,11 @@ class _CalculatorState extends State<Calculator> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='7';
+                              });
+                            },
                             child: const Text(
                               "7",
                               style: TextStyle(fontSize: 30),
@@ -122,12 +160,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='8';
+                              });
+                            },
                             child: const Text(
                               "8",
                               style:
@@ -136,25 +179,38 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='9';
+                              });
+                            },
                             child: const Text(
                               "9",
-                              style: TextStyle(fontSize: 30,color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 30, color: Colors.white),
                             ),
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='*';
+                                dotheclaulation('*');
+                              });
+
+                            },
                             child: const Text(
                               "*",
                               style: TextStyle(fontSize: 30),
@@ -162,7 +218,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -184,7 +241,11 @@ class _CalculatorState extends State<Calculator> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='4';
+                              });
+                            },
                             child: const Text(
                               "4",
                               style: TextStyle(fontSize: 30),
@@ -192,12 +253,15 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {setState(() {
+                              operations+='5';
+                            });},
                             child: const Text(
                               "5",
                               style: TextStyle(fontSize: 30),
@@ -205,12 +269,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='6';
+                              });
+                            },
                             child: const Text(
                               "6",
                               style: TextStyle(fontSize: 30),
@@ -218,12 +287,18 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='-';
+                                dotheclaulation("-");
+                              });
+                            },
                             child: const Text(
                               "-",
                               style: TextStyle(fontSize: 30),
@@ -231,7 +306,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -253,7 +329,11 @@ class _CalculatorState extends State<Calculator> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                             setState(() {
+                               operations+='1';
+                             });
+                            },
                             child: const Text(
                               "1",
                               style: TextStyle(fontSize: 30),
@@ -261,12 +341,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='2';
+                              });
+                            },
                             child: const Text(
                               "2",
                               style: TextStyle(fontSize: 30),
@@ -274,12 +359,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='3';
+                              });
+                            },
                             child: const Text(
                               "3",
                               style: TextStyle(fontSize: 30),
@@ -287,12 +377,18 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='+';
+                                dotheclaulation('+');
+                              });
+                            },
                             child: const Text(
                               "+",
                               style: TextStyle(fontSize: 30),
@@ -300,7 +396,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -330,12 +427,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='0';
+                              });
+                            },
                             child: const Text(
                               "0",
                               style: TextStyle(fontSize: 30),
@@ -343,12 +445,17 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations+='.';
+                              });
+                            },
                             child: const Text(
                               ".",
                               style: TextStyle(fontSize: 30),
@@ -356,7 +463,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -369,7 +477,8 @@ class _CalculatorState extends State<Calculator> {
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(20),
-                              primary: HexColor("#333333"), // <-- Button color
+                              primary: const Color(0xFF283637),
+                              // <-- Button color
                               onPrimary: Colors.white, // <-- Splash color
                             ),
                           ),
@@ -384,5 +493,8 @@ class _CalculatorState extends State<Calculator> {
         ),
       ),
     );
+  }
+  void dotheclaulation(String operator){
+    print(operator+" press hua h");
   }
 }
