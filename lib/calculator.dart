@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);
@@ -8,8 +9,8 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  String ans = '123';
-  String operations = '12+4';
+  String ans = '0';
+  String operations = '';
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +38,13 @@ class _CalculatorState extends State<Calculator> {
                         style: (const TextStyle(
                             color: Colors.white, fontSize: 32)),
                       ),
-                      const SizedBox(height: 30,),
+                      const SizedBox(
+                        height: 30,
+                      ),
                       Text(
                         ans,
                         style: (const TextStyle(
-                            color: Colors.white, fontSize: 32)),
+                            color: Colors.white, fontSize: 40)),
                       ),
                     ],
                   )),
@@ -64,8 +67,8 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations="";
-                                ans="";
+                                operations = "";
+                                ans = "0";
                               });
                             },
                             child: const Text(
@@ -83,8 +86,10 @@ class _CalculatorState extends State<Calculator> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              operations="";
-                              ans="";
+                              setState(() {
+                                operations = operations.substring(
+                                    0, operations.length - 1);
+                              });
                             },
                             child: const Icon(Icons.backspace_outlined,
                                 color: Colors.white),
@@ -97,7 +102,11 @@ class _CalculatorState extends State<Calculator> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                operations += '%';
+                              });
+                            },
                             child: const Text(
                               "%",
                               style: TextStyle(fontSize: 30),
@@ -113,10 +122,8 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='/';
-                                dotheclaulation('/');
+                                operations += '/';
                               });
-
                             },
                             child: const Text(
                               "/",
@@ -150,7 +157,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='7';
+                                operations += '7';
                               });
                             },
                             child: const Text(
@@ -168,7 +175,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='8';
+                                operations += '8';
                               });
                             },
                             child: const Text(
@@ -187,7 +194,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='9';
+                                operations += '9';
                               });
                             },
                             child: const Text(
@@ -206,10 +213,8 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='*';
-                                dotheclaulation('*');
+                                operations += '*';
                               });
-
                             },
                             child: const Text(
                               "*",
@@ -243,7 +248,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='4';
+                                operations += '4';
                               });
                             },
                             child: const Text(
@@ -259,9 +264,11 @@ class _CalculatorState extends State<Calculator> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {setState(() {
-                              operations+='5';
-                            });},
+                            onPressed: () {
+                              setState(() {
+                                operations += '5';
+                              });
+                            },
                             child: const Text(
                               "5",
                               style: TextStyle(fontSize: 30),
@@ -277,7 +284,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='6';
+                                operations += '6';
                               });
                             },
                             child: const Text(
@@ -295,8 +302,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='-';
-                                dotheclaulation("-");
+                                operations += '-';
                               });
                             },
                             child: const Text(
@@ -330,9 +336,9 @@ class _CalculatorState extends State<Calculator> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                             setState(() {
-                               operations+='1';
-                             });
+                              setState(() {
+                                operations += '1';
+                              });
                             },
                             child: const Text(
                               "1",
@@ -349,7 +355,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='2';
+                                operations += '2';
                               });
                             },
                             child: const Text(
@@ -367,7 +373,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='3';
+                                operations += '3';
                               });
                             },
                             child: const Text(
@@ -385,8 +391,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='+';
-                                dotheclaulation('+');
+                                operations += '+';
                               });
                             },
                             child: const Text(
@@ -435,7 +440,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='0';
+                                operations += '0';
                               });
                             },
                             child: const Text(
@@ -453,7 +458,7 @@ class _CalculatorState extends State<Calculator> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                operations+='.';
+                                operations += '.';
                               });
                             },
                             child: const Text(
@@ -469,7 +474,11 @@ class _CalculatorState extends State<Calculator> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                dothecalculation();
+                              });
+                            },
                             child: const Text(
                               "=",
                               style: TextStyle(fontSize: 30),
@@ -494,7 +503,15 @@ class _CalculatorState extends State<Calculator> {
       ),
     );
   }
-  void dotheclaulation(String operator){
-    print(operator+" press hua h");
+
+  void dothecalculation() {
+    try {
+      Parser p = Parser();
+      Expression exp = p.parse(operations);
+      ContextModel cm = ContextModel();
+      ans = '${exp.evaluate(EvaluationType.REAL, cm)}';
+    } catch (e) {
+      ans = "Error";
+    }
   }
 }
